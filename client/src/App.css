@@ -1,0 +1,258 @@
+/* ===== Background ===== */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #eaf2ff;
+  min-height: 100vh;
+  background:
+    radial-gradient(900px 500px at 15% 10%, rgba(120, 79, 255, 0.35), transparent 60%),
+    radial-gradient(900px 500px at 85% 20%, rgba(0, 198, 255, 0.25), transparent 55%),
+    radial-gradient(900px 500px at 50% 90%, rgba(0, 255, 170, 0.18), transparent 60%),
+    linear-gradient(135deg, #070b18 0%, #0b1330 35%, #091b2d 100%);
+}
+
+/* ===== App shell ===== */
+.appShell {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+}
+
+@media (max-width: 900px) {
+  .appShell { grid-template-columns: 1fr; }
+  .sidebar { position: sticky; top: 0; z-index: 10; }
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  padding: 18px;
+  border-right: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(12px);
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 14px;
+  letter-spacing: 0.2px;
+}
+
+.sideBtn {
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  margin-top: 8px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.06);
+  color: #eaf2ff;
+  cursor: pointer;
+}
+
+.sideBtn.active {
+  background: rgba(0,198,255,0.16);
+  border-color: rgba(0,198,255,0.25);
+}
+
+.sideSection { margin-top: 18px; }
+.sideLabel { font-size: 12px; opacity: 0.8; margin-bottom: 8px; }
+
+.sideInput {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(10, 15, 35, 0.55);
+  color: #eaf2ff;
+  outline: none;
+}
+
+.sideSmall {
+  width: 100%;
+  margin-top: 8px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.06);
+  color: #eaf2ff;
+  cursor: pointer;
+}
+
+.sideFooter { margin-top: 18px; }
+
+/* ===== Main ===== */
+.main {
+  padding: 22px 18px 60px;
+  max-width: 1050px;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  backdrop-filter: blur(12px);
+}
+
+.navTitle { font-size: 24px; font-weight: 700; }
+.navSub { font-size: 13px; opacity: 0.85; margin-top: 2px; }
+
+/* ===== Card (Glass) ===== */
+.card {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 18px;
+  margin-top: 16px;
+  box-shadow: 0 18px 60px rgba(0,0,0,0.35);
+  backdrop-filter: blur(12px);
+}
+
+/* ===== Form grid ===== */
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 700px) {
+  .grid2 { grid-template-columns: 1fr; }
+}
+
+/* ===== Inputs ===== */
+label {
+  display: block;
+  font-size: 13px;
+  opacity: 0.9;
+  margin-bottom: 6px;
+}
+
+input, textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(10, 15, 35, 0.55);
+  color: #eaf2ff;
+  outline: none;
+}
+
+input::placeholder, textarea::placeholder {
+  color: rgba(234,242,255,0.55);
+}
+
+input:focus, textarea:focus {
+  border-color: rgba(0, 198, 255, 0.55);
+  box-shadow: 0 0 0 4px rgba(0,198,255,0.12);
+}
+
+textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+/* ===== Row buttons ===== */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-top: 12px;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.08);
+  color: #eaf2ff;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.btn:hover { transform: translateY(-1px); background: rgba(255,255,255,0.12); }
+
+.btn.primary {
+  border: none;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  box-shadow: 0 14px 35px rgba(0, 114, 255, 0.25);
+}
+
+.btn.danger {
+  border: none;
+  background: linear-gradient(135deg, #ff4d6d, #c1121f);
+  box-shadow: 0 14px 35px rgba(255, 77, 109, 0.22);
+}
+
+/* ===== Badges ===== */
+.badges { display: flex; gap: 8px; align-items: center; }
+
+.badge {
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.08);
+}
+
+.badge.star {
+  background: rgba(255, 215, 0, 0.16);
+  border-color: rgba(255, 215, 0, 0.22);
+}
+
+/* ===== Snippet card top ===== */
+.snippetTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+/* ===== Code block ===== */
+.codeBlock {
+  margin: 12px 0 0;
+  border-radius: 14px;
+  overflow-x: auto;
+}
+
+/* ===== Tags ===== */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.tag {
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(0,198,255,0.12);
+}
+
+/* ===== Message ===== */
+.msg {
+  margin-top: 14px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 215, 168, 0.25);
+  background: rgba(255, 215, 168, 0.10);
+}
+
+/* ===== muted ===== */
+.muted { opacity: 0.85; }
+
+/* checkbox row */
+.checkRow { display: flex; align-items: center; gap: 10px; opacity: 0.9; }
+.checkRow input { width: 18px; height: 18px; }
