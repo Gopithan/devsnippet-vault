@@ -9,7 +9,7 @@ const snippetRoutes = require("./routes/snippetRoutes"); // ✅ add
 const app = express();
 
 // middleware
-app.use(cors());
+app.use(cors({ origin: "*" }));
 app.use(express.json());
 
 // routes
